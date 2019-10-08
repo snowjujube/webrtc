@@ -13,7 +13,7 @@ const ICE_SERVER_CONFIG = {
     //     },
     // ]
     'iceServers': [{
-        'urls': 'stun:stun.l.google.com:19302'
+        'urls': 'stun:118.178.181.100:3478'
     }]
 };
 
