@@ -217,8 +217,8 @@ function onCreateSessionDescriptionError(error) {
 
 function requestTurn(turnURL) {
     var turnExists = false;
-    for (var i in pcConfig.iceServers) {
-        if (pcConfig.iceServers[i].urls.substr(0, 5) === 'turn:') {
+    for (var i in ICE_SERVER_CONFIG.iceServers) {
+        if (ICE_SERVER_CONFIG.iceServers[i].urls.substr(0, 5) === 'turn:') {
             turnExists = true;
             turnReady = true;
             break;
@@ -243,6 +243,8 @@ function requestTurn(turnURL) {
         xhr.send();
     }
 }
+
+
 
 function handleRemoteStreamAdded(event) {
     console.log('Remote stream added.');
