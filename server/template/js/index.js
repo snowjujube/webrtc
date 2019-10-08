@@ -13,7 +13,9 @@ const ICE_SERVER_CONFIG = {
     //     },
     // ]
     'iceServers': [{
-        'urls': 'stun:118.178.181.100:3478'
+        'urls': 'turn:118.178.181.100:3478',
+        'username': 'neo',
+        'credential': 'tape'
     }]
 };
 
