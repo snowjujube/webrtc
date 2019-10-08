@@ -34,7 +34,7 @@ let turnReady;
 
 
 // connect to the server
-const socket = io.connect();
+const socket = io('http://localhost');
 
 // try to join room 'neotape'
 if (ROOM !== '') {
