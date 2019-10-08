@@ -165,7 +165,7 @@ window.onbeforeunload = function () {
 
 function createPeerConnection() {
     try {
-        pc = new RTCPeerConnection(null);
+        pc = new RTCPeerConnection(ICE_SERVER_CONFIG);
         pc.onicecandidate = handleIceCandidate;
         pc.onaddstream = handleRemoteStreamAdded;
         pc.onremovestream = handleRemoteStreamRemoved;
@@ -218,34 +218,34 @@ function onCreateSessionDescriptionError(error) {
     trace('Failed to create session description: ' + error.toString());
 }
 
-function requestTurn(turnURL) {
-    var turnExists = false;
-    for (var i in ICE_SERVER_CONFIG.iceServers) {
-        if (ICE_SERVER_CONFIG.iceServers[i].urls.substr(0, 5) === 'turn:') {
-            turnExists = true;
-            turnReady = true;
-            break;
-        }
-    }
-    if (!turnExists) {
-        console.log('Getting TURN server from ', turnURL);
-        // No TURN server. Get one from computeengineondemand.appspot.com:
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var turnServer = JSON.parse(xhr.responseText);
-                console.log('Got TURN server: ', turnServer);
-                pcConfig.iceServers.push({
-                    'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
-                    'credential': turnServer.password
-                });
-                turnReady = true;
-            }
-        };
-        xhr.open('GET', turnURL, true);
-        xhr.send();
-    }
-}
+// function requestTurn(turnURL) {
+//     var turnExists = false;
+//     for (var i in ICE_SERVER_CONFIG.iceServers) {
+//         if (ICE_SERVER_CONFIG.iceServers[i].urls.substr(0, 5) === 'turn:') {
+//             turnExists = true;
+//             turnReady = true;
+//             break;
+//         }
+//     }
+//     if (!turnExists) {
+//         console.log('Getting TURN server from ', turnURL);
+//         // No TURN server. Get one from computeengineondemand.appspot.com:
+//         var xhr = new XMLHttpRequest();
+//         xhr.onreadystatechange = function () {
+//             if (xhr.readyState === 4 && xhr.status === 200) {
+//                 var turnServer = JSON.parse(xhr.responseText);
+//                 console.log('Got TURN server: ', turnServer);
+//                 pcConfig.iceServers.push({
+//                     'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
+//                     'credential': turnServer.password
+//                 });
+//                 turnReady = true;
+//             }
+//         };
+//         xhr.open('GET', turnURL, true);
+//         xhr.send();
+//     }
+// }
 
 
 function handleRemoteStreamAdded(event) {

@@ -27,10 +27,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="213">
+              <caret line="167" column="52" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
               <folding>
-                <element signature="e#332#397#0" />
                 <element signature="e#585#691#0" />
                 <element signature="e#752#795#0" />
                 <element signature="e#1066#1074#0" />
@@ -51,12 +50,7 @@
                 <element signature="e#3076#3267#0" />
                 <element signature="e#3236#3265#0" />
                 <element signature="e#3287#3306#0" />
-                <element signature="e#3555#3981#0" />
-                <element signature="e#3715#3979#0" />
                 <element signature="e#3940#3973#0" />
-                <element signature="e#4019#4046#0" />
-                <element signature="e#4140#4578#0" />
-                <element signature="e#4150#4403#0" />
                 <element signature="e#4414#4576#0" />
                 <element signature="e#4615#4959#0" />
                 <element signature="e#4690#4901#0" />
@@ -67,9 +61,6 @@
                 <element signature="e#5207#5361#0" />
                 <element signature="e#5415#5582#0" />
                 <element signature="e#5632#5707#0" />
-                <element signature="e#6216#6662#0" />
-                <element signature="e#6278#6652#0" />
-                <element signature="e#6446#6602#0" />
                 <element signature="e#6773#6892#0" />
                 <element signature="e#6936#6997#0" />
                 <element signature="e#7017#7088#0" />
@@ -111,6 +102,7 @@
       <find>isChannelReady</find>
       <find>joined</find>
       <find>ICE_SERVER_CONFIG</find>
+      <find>turnExists</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,12 +195,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570517643962</updated>
-      <workItem from="1570517645370" duration="15967000" />
+      <workItem from="1570517645370" duration="16499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15967000" />
+    <option name="totallyTimeSpent" value="16499000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -296,10 +288,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="213">
+          <caret line="167" column="52" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
           <folding>
-            <element signature="e#332#397#0" />
             <element signature="e#585#691#0" />
             <element signature="e#752#795#0" />
             <element signature="e#1066#1074#0" />
@@ -320,12 +311,7 @@
             <element signature="e#3076#3267#0" />
             <element signature="e#3236#3265#0" />
             <element signature="e#3287#3306#0" />
-            <element signature="e#3555#3981#0" />
-            <element signature="e#3715#3979#0" />
             <element signature="e#3940#3973#0" />
-            <element signature="e#4019#4046#0" />
-            <element signature="e#4140#4578#0" />
-            <element signature="e#4150#4403#0" />
             <element signature="e#4414#4576#0" />
             <element signature="e#4615#4959#0" />
             <element signature="e#4690#4901#0" />
@@ -336,9 +322,6 @@
             <element signature="e#5207#5361#0" />
             <element signature="e#5415#5582#0" />
             <element signature="e#5632#5707#0" />
-            <element signature="e#6216#6662#0" />
-            <element signature="e#6278#6652#0" />
-            <element signature="e#6446#6602#0" />
             <element signature="e#6773#6892#0" />
             <element signature="e#6936#6997#0" />
             <element signature="e#7017#7088#0" />
