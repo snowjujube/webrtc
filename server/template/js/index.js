@@ -2,16 +2,19 @@
 
 // TURN server deployed before
 const ICE_SERVER_CONFIG = {
-    'iceServers': [
-        {
-            'urls': 'stun:118.178.181.100:3478',
-        },
-        {
-            'urls': 'turn:118.178.181.100:3478',
-            'username': 'neo',
-            'credential': 'tape'
-        },
-    ]
+    // 'iceServers': [
+    //     {
+    //         'urls': 'stun:118.178.181.100:3478',
+    //     },
+    //     {
+    //         'urls': 'turn:118.178.181.100:3478',
+    //         'username': 'neo',
+    //         'credential': 'tape'
+    //     },
+    // ]
+    'iceServers': [{
+        'urls': 'stun:stun.l.google.com:19302'
+    }]
 };
 
 // SDP protocol constraints
@@ -243,7 +246,6 @@ function requestTurn(turnURL) {
         xhr.send();
     }
 }
-
 
 
 function handleRemoteStreamAdded(event) {

@@ -27,12 +27,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+            <state relative-caret-position="240">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding>
-                <element signature="e#46#496#0" />
-                <element signature="e#56#116#0" />
-                <element signature="e#172#296#0" />
                 <element signature="e#332#397#0" />
                 <element signature="e#585#691#0" />
                 <element signature="e#752#795#0" />
@@ -207,12 +204,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570517643962</updated>
-      <workItem from="1570517645370" duration="15061000" />
+      <workItem from="1570517645370" duration="15322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15061000" />
+    <option name="totallyTimeSpent" value="15322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -300,12 +297,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="240">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
-            <element signature="e#46#496#0" />
-            <element signature="e#56#116#0" />
-            <element signature="e#172#296#0" />
             <element signature="e#332#397#0" />
             <element signature="e#585#691#0" />
             <element signature="e#752#795#0" />
