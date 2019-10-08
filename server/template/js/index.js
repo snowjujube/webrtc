@@ -1,79 +1,66 @@
 'use strict';
 
-// TURN server deployed before
-const ICE_SERVER_CONFIG = {
-    // 'iceServers': [
-    //     {
-    //         'urls': 'stun:118.178.181.100:3478',
-    //     },
-    //     {
-    //         'urls': 'turn:118.178.181.100:3478',
-    //         'username': 'neo',
-    //         'credential': 'tape'
-    //     },
-    // ]
+var isChannelReady = false;
+var isInitiator = false;
+var isStarted = false;
+var localStream;
+var pc;
+var remoteStream;
+var turnReady;
+
+var pcConfig = {
     'iceServers': [{
-        'urls': 'stun:118.178.181.100:3478'
-    }]
+        'urls': 'stun:118.178.181.100:3478',
+    },
+        {
+            'urls': 'turn:118.178.181.100:3478',
+            'username': 'neo',
+            'credential': 'tape'
+        },
+    ]
 };
 
-// SDP protocol constraints
-const SDP_CONSTRAINTS = {
-    offerToReceiveVideo: true,
+// Set up audio and video regardless of what devices are present.
+var sdpConstraints = {
     offerToReceiveAudio: true,
+    offerToReceiveVideo: true
 };
 
-// define ROOM as a const now
-const ROOM = 'neotape';
+/////////////////////////////////////////////
 
-// Some flags defined here
-let isChannelReady = false;
-let isInitiator = false;
-let isStarted = false;
-let localStream;
-let pc;
-let remoteStream;
-let turnReady;
+var room = 'foo';
+// Could prompt for room name:
+// room = prompt('Enter room name:');
 
-
-// connect to the server
 const socket = io('http://neotape.live:8080');
 
-// try to join room 'neotape'
-if (ROOM !== '') {
-    socket.emit('create or join', ROOM);
-    console.log(`Attempted to create or join room: ${ROOM}`);
+if (room !== '') {
+    socket.emit('create or join', room);
+    console.log('Attempted to create or  join room', room);
 }
 
-// after room created
 socket.on('created', function (room) {
-    console.log(`Created room: ${room}`);
-    isInitiator = true; // the client that created room is the initiator
+    console.log('Created room ' + room);
+    isInitiator = true;
 });
 
-// room full handler
 socket.on('full', function (room) {
-    console.log(`Room ${room} is full`);
+    console.log('Room ' + room + ' is full');
 });
 
-// when another client join to the room
 socket.on('join', function (room) {
-    console.log(
-        `Another peer made a request to join room: ${room} \n`,
-        `This peer is the initiator of room: ${room}`
-    );
+    console.log('Another peer made a request to join room ' + room);
+    console.log('This peer is the initiator of room ' + room + '!');
     isChannelReady = true;
 });
 
-// when both of the clients are in the room
 socket.on('joined', function (room) {
-    console.log(`joined: ${room}`);
+    console.log('joined: ' + room);
     isChannelReady = true;
 });
 
-// notify from the server
-socket.on('notify', function (array) {
-    console.log.apply(console, array); // log them all
+socket.on('log', function (array) {
+    console.log.apply(console, array);
 });
 
 ////////////////////////////////////////////////
@@ -138,9 +125,9 @@ var constraints = {
 console.log('Getting user media with constraints', constraints);
 
 if (location.hostname !== 'localhost') {
-    // requestTurn(
-    //     'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
-    // );
+    requestTurn(
+        'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
+    );
 }
 
 function maybeStart() {
@@ -165,7 +152,7 @@ window.onbeforeunload = function () {
 
 function createPeerConnection() {
     try {
-        pc = new RTCPeerConnection(ICE_SERVER_CONFIG);
+        pc = new RTCPeerConnection(null);
         pc.onicecandidate = handleIceCandidate;
         pc.onaddstream = handleRemoteStreamAdded;
         pc.onremovestream = handleRemoteStreamRemoved;
@@ -219,34 +206,33 @@ function onCreateSessionDescriptionError(error) {
 }
 
 // function requestTurn(turnURL) {
-//     var turnExists = false;
-//     for (var i in ICE_SERVER_CONFIG.iceServers) {
-//         if (ICE_SERVER_CONFIG.iceServers[i].urls.substr(0, 5) === 'turn:') {
-//             turnExists = true;
-//             turnReady = true;
-//             break;
-//         }
+//   var turnExists = false;
+//   for (var i in pcConfig.iceServers) {
+//     if (pcConfig.iceServers[i].urls.substr(0, 5) === 'turn:') {
+//       turnExists = true;
+//       turnReady = true;
+//       break;
 //     }
-//     if (!turnExists) {
-//         console.log('Getting TURN server from ', turnURL);
-//         // No TURN server. Get one from computeengineondemand.appspot.com:
-//         var xhr = new XMLHttpRequest();
-//         xhr.onreadystatechange = function () {
-//             if (xhr.readyState === 4 && xhr.status === 200) {
-//                 var turnServer = JSON.parse(xhr.responseText);
-//                 console.log('Got TURN server: ', turnServer);
-//                 pcConfig.iceServers.push({
-//                     'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
-//                     'credential': turnServer.password
-//                 });
-//                 turnReady = true;
-//             }
-//         };
-//         xhr.open('GET', turnURL, true);
-//         xhr.send();
-//     }
+//   }
+//   if (!turnExists) {
+//     console.log('Getting TURN server from ', turnURL);
+//     // No TURN server. Get one from computeengineondemand.appspot.com:
+//     var xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function() {
+//       if (xhr.readyState === 4 && xhr.status === 200) {
+//         var turnServer = JSON.parse(xhr.responseText);
+//         console.log('Got TURN server: ', turnServer);
+//         pcConfig.iceServers.push({
+//           'urls': 'turn:' + turnServer.username + '@' + turnServer.turn,
+//           'credential': turnServer.password
+//         });
+//         turnReady = true;
+//       }
+//     };
+//     xhr.open('GET', turnURL, true);
+//     xhr.send();
+//   }
 // }
-
 
 function handleRemoteStreamAdded(event) {
     console.log('Remote stream added.');
@@ -275,14 +261,3 @@ function stop() {
     pc.close();
     pc = null;
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -27,46 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="167" column="52" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
-              <folding>
-                <element signature="e#585#691#0" />
-                <element signature="e#752#795#0" />
-                <element signature="e#1066#1074#0" />
-                <element signature="e#1214#1359#0" />
-                <element signature="e#1399#1465#0" />
-                <element signature="e#1574#1582#0" />
-                <element signature="e#1745#1839#0" />
-                <element signature="e#1915#2695#0" />
-                <element signature="e#2009#2038#0" />
-                <element signature="e#2074#2248#0" />
-                <element signature="e#2116#2153#0" />
-                <element signature="e#2298#2374#0" />
-                <element signature="e#2427#2614#0" />
-                <element signature="e#2473#2567#0" />
-                <element signature="e#2656#2693#0" />
-                <element signature="e#2904#2941#0" />
-                <element signature="e#2988#3045#0" />
-                <element signature="e#3076#3267#0" />
-                <element signature="e#3236#3265#0" />
-                <element signature="e#3287#3306#0" />
-                <element signature="e#3940#3973#0" />
-                <element signature="e#4414#4576#0" />
-                <element signature="e#4615#4959#0" />
-                <element signature="e#4690#4901#0" />
-                <element signature="e#4712#4893#0" />
-                <element signature="e#4907#4957#0" />
-                <element signature="e#5000#5052#0" />
-                <element signature="e#5072#5185#0" />
-                <element signature="e#5207#5361#0" />
-                <element signature="e#5415#5582#0" />
-                <element signature="e#5632#5707#0" />
-                <element signature="e#6773#6892#0" />
-                <element signature="e#6936#6997#0" />
-                <element signature="e#7017#7088#0" />
-                <element signature="e#7120#7200#0" />
-                <element signature="e#7218#7275#0" />
-              </folding>
+            <state relative-caret-position="433">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -195,24 +157,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570517643962</updated>
-      <workItem from="1570517645370" duration="16499000" />
+      <workItem from="1570517645370" duration="16764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16499000" />
+    <option name="totallyTimeSpent" value="16764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3255814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3255814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="GraphQL" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.2433735" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.2433735" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -288,46 +250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/template/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="167" column="52" selection-start-line="167" selection-start-column="52" selection-end-line="167" selection-end-column="52" />
-          <folding>
-            <element signature="e#585#691#0" />
-            <element signature="e#752#795#0" />
-            <element signature="e#1066#1074#0" />
-            <element signature="e#1214#1359#0" />
-            <element signature="e#1399#1465#0" />
-            <element signature="e#1574#1582#0" />
-            <element signature="e#1745#1839#0" />
-            <element signature="e#1915#2695#0" />
-            <element signature="e#2009#2038#0" />
-            <element signature="e#2074#2248#0" />
-            <element signature="e#2116#2153#0" />
-            <element signature="e#2298#2374#0" />
-            <element signature="e#2427#2614#0" />
-            <element signature="e#2473#2567#0" />
-            <element signature="e#2656#2693#0" />
-            <element signature="e#2904#2941#0" />
-            <element signature="e#2988#3045#0" />
-            <element signature="e#3076#3267#0" />
-            <element signature="e#3236#3265#0" />
-            <element signature="e#3287#3306#0" />
-            <element signature="e#3940#3973#0" />
-            <element signature="e#4414#4576#0" />
-            <element signature="e#4615#4959#0" />
-            <element signature="e#4690#4901#0" />
-            <element signature="e#4712#4893#0" />
-            <element signature="e#4907#4957#0" />
-            <element signature="e#5000#5052#0" />
-            <element signature="e#5072#5185#0" />
-            <element signature="e#5207#5361#0" />
-            <element signature="e#5415#5582#0" />
-            <element signature="e#5632#5707#0" />
-            <element signature="e#6773#6892#0" />
-            <element signature="e#6936#6997#0" />
-            <element signature="e#7017#7088#0" />
-            <element signature="e#7120#7200#0" />
-            <element signature="e#7218#7275#0" />
-          </folding>
+        <state relative-caret-position="433">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
         </state>
       </provider>
     </entry>
