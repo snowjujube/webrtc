@@ -32,7 +32,7 @@ var room = 'foo';
 // Could prompt for room name:
 // room = prompt('Enter room name:');
 
-const socket = io('http://neotape.live:8080');
+const socket = io('https://neotape.live');
 
 if (room !== '') {
     socket.emit('create or join', room);
@@ -124,11 +124,11 @@ var constraints = {
 
 console.log('Getting user media with constraints', constraints);
 
-if (location.hostname !== 'localhost') {
-    requestTurn(
-        'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
-    );
-}
+// if (location.hostname !== 'localhost') {
+//     requestTurn(
+//         'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
+//     );
+// }
 
 function maybeStart() {
     console.log('>>>>>>> maybeStart() ', isStarted, localStream, isChannelReady);
@@ -152,7 +152,7 @@ window.onbeforeunload = function () {
 
 function createPeerConnection() {
     try {
-        pc = new RTCPeerConnection(null);
+        pc = new RTCPeerConnection(pcConfig);
         pc.onicecandidate = handleIceCandidate;
         pc.onaddstream = handleRemoteStreamAdded;
         pc.onremovestream = handleRemoteStreamRemoved;
